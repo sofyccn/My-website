@@ -42,4 +42,4 @@ npm start
 You can fork this repository and personalize it for your own portfolio.
 If you do, please give proper credit by linking back to the original repository:
 
-Original template by [Soumyajit4419]!(https://github.com/soumyajit4419/Portfolio)
+Original template by [Soumyajit4419](https://github.com/soumyajit4419/Portfolio)
