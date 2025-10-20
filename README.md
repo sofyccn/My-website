@@ -26,16 +26,22 @@ Deployment: GitHub Pages / Netlify
 
 1. Clone the repository:
 
+```bash
 git clone https://github.com/sofyccn/Portfolio.git
 cd Portfolio
+```
 
 2. Install dependencies:
-
+   
+```bash
 npm install
+```
 
 3. Run the development server:
 
+```bash
 npm start
+```
 
 ## ✨ Customization
 
