@@ -26,20 +26,26 @@ Deployment: GitHub Pages / Netlify
 
 1. Clone the repository:
 
+```bash
 git clone https://github.com/sofyccn/Portfolio.git
 cd Portfolio
+```
 
 2. Install dependencies:
-
+   
+```bash
 npm install
+```
 
 3. Run the development server:
 
+```bash
 npm start
+```
 
 ## ✨ Customization
 
 You can fork this repository and personalize it for your own portfolio.
 If you do, please give proper credit by linking back to the original repository:
 
-Original template by [Soumyajit4419]!(https://github.com/soumyajit4419/Portfolio)
+Original template by [Soumyajit4419](https://github.com/soumyajit4419/Portfolio)
