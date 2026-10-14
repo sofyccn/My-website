@@ -2,6 +2,8 @@
 
 This is my personal developer portfolio website, built with React.js and inspired by Soumyajit4419’s Portfolio
 
+🔗 **Live site:** https://sofyccn.github.io/My-website/
+
 It highlights my projects, experience, and interests in software development, data science, and human–robot interaction.
 
 ## 🚀 Features
@@ -20,15 +22,15 @@ Frontend: React.js, Bootstrap, CSS
 
 Animations: React-particles, Typewriter effect
 
-Deployment: GitHub Pages / Netlify
+Deployment: GitHub Pages (built and published by GitHub Actions on every push to `main`)
 
 ## 🛠️ Setup Instructions
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/sofyccn/Portfolio.git
-cd Portfolio
+git clone https://github.com/sofyccn/My-website.git
+cd My-website
 ```
 
 2. Install dependencies:

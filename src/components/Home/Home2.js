@@ -24,31 +24,32 @@ function Home2() {
                   Python, React, C, and JavaScript{" "}
                 </b>
               </i>
-              and I enjoy using <b className="purple">APIs and AI </b> to make projects come alive
+              and I enjoy using <b className="purple">APIs and AI </b> to make projects come alive.
               <br />
               <br />
               My key areas of interest include creating
               <i>
                 <b className="purple">
                   {" "}
-                  Web Apps, AI Projects, and Data Visualizations{" "}
+                  Web Apps, AI Projects, and Data Visualizations
                 </b>
               </i>
+              .{" "}
               I’m always excited to learn new technologies and adapt to whatever challenge comes next.
 
               <br />
               <br />
                When I’m not coding, you’ll probably find me 
-              <b className="purple"> traveling </b> dancing{" "}
+              <b className="purple"> traveling</b>, dancing, or{" "}
               <i>
-                <b className="purple">learning new languages</b> {" "}I’m very social and 
+                <b className="purple">learning new languages</b>. I’m very social and
                 <b className="purple"> love making connections.</b>
               </i>
             </p>
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={myImg} className="img-fluid" alt="Sofia Cobo" />
             </Tilt>
           </Col>
         </Row>
