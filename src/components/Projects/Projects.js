@@ -2,21 +2,34 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import InCollege from "../../Assets/Projects/inCollege.png";
-import fsi from "../../Assets/Projects/fsi.png";
 import bloom from "../../Assets/Projects/bloom.png";
 import lpa from "../../Assets/Projects/lpa.png";
 import theraplay from "../../Assets/Projects/theraplay.jpeg";
+import kyodo from "../../Assets/Projects/kyodo.png";
+import campusEvents from "../../Assets/Projects/campusEvents.jpg";
+import nosyNeighbor from "../../Assets/Projects/nosyNeighbor.png";
+import bullspath from "../../Assets/Projects/bullspath.png";
 
 const projects = [
   {
     title: "Kyodo Catalog",
     badge: "Client project · 2026",
     tech: ["React", "TypeScript", "PostgreSQL", "Clerk", "Cloudflare R2"],
+    imgPath: kyodo,
     description:
       "A private B2B catalog and order-request app for an agricultural machinery and spare-parts business, covering 1,200 products. Approved clients browse the catalog and send order requests, dispatchers confirm stock, and every status change is enforced on the server and recorded in a history table. I built it end to end from the client’s concept: frontend, backend, branding, and UX/UI. It replaced a physical catalog and Excel spreadsheets.",
     ghLink: "https://github.com/sofyccn/catalog",
     demoLink: "https://catalog-api-ten.vercel.app",
+  },
+  {
+    title: "Nosy Neighbor",
+    badge: "HackUSF 2026",
+    tech: ["React", "PHP", "Docker", "OpenAI API", "Google Street View"],
+    imgPath: nosyNeighbor,
+    description:
+      "AI-powered lead qualification for home service businesses like roofers, landscapers, and HVAC companies. A business uploads prospect addresses, the app pulls Google Street View imagery for each one, and OpenAI vision picks out the homes that visibly need that service. Each qualified lead gets a personalized postcard written from what was observed. I was the team’s UX/UI engineer.",
+    demoLink: "https://devpost.com/software/nosy-neighbor",
+    demoLabel: "Devpost",
   },
   {
     title: "TheraPlay",
@@ -27,6 +40,7 @@ const projects = [
       "A real-time rehab platform that turns physical therapy into a game for both pediatric and adult patients. It tracks 25 body keypoints per frame with MediaPipe to score patient movement, then generates clinical progress reports through the Gemini API.",
     ghLink: "https://github.com/seljbari/TheraPlay",
     demoLink: "https://devpost.com/software/theraplay-za54kh",
+    demoLabel: "Devpost",
   },
   {
     title: "Bloom",
@@ -44,8 +58,21 @@ const projects = [
     title: "CampusEvents",
     badge: "Spring 2026",
     tech: ["React", "TypeScript", "PostgreSQL", "Bun", "Hono", "Docker"],
+    imgPath: campusEvents,
+    ghLink: "https://github.com/trevorflahardy/CampusEvents",
     description:
-      "A full stack event booking system with JWT authentication, role-based access control, and real-time ticket tracking. I designed the PostgreSQL schema and a REST API with 15+ endpoints for event management, ticket purchasing, and analytics.",
+      "A campus event and ticket booking system for USF students and event organizers, built as a team project. It has JWT authentication, role-based access control, real-time ticket tracking, and a PostgreSQL schema behind a REST API with 15+ endpoints for event management, ticket purchasing, and analytics.",
+  },
+  {
+    title: "BullsPath",
+    badge: "HackJam 2025",
+    tech: ["Python", "Gemini API", "NetworkX", "Matplotlib", "Tailwind CSS"],
+    imgPath: bullspath,
+    description:
+      "An AI campus companion for new USF students, built in a 6-hour hackathon. You ask in plain language, like “where can I find a microwave near the library?”, and Gemini turns the request into a destination. A* pathfinding over a graph of campus locations finds the route, which is drawn on a map and read aloud as an audio guide.",
+    ghLink: "https://github.com/mmosoriov/navigating_USF",
+    demoLink: "https://devpost.com/software/bullspath",
+    demoLabel: "Devpost",
   },
   {
     title: "Student Well-Being Classification",
@@ -55,25 +82,6 @@ const projects = [
     description:
       "Used data from the PIRLS 2021 international reading assessment to explore how students’ well-being relates to reading achievement. I applied Latent Profile Analysis to classify 4 well-being profiles from 500+ students, ran statistical testing (ANOVA, BIC, post-hoc Tukey), and built 15+ visualizations.",
     ghLink: "https://github.com/sofyccn/PIRLS_2021",
-  },
-  {
-    title: "In College",
-    badge: "Fall 2025",
-    tech: ["COBOL", "Docker", "Jira"],
-    imgPath: InCollege,
-    description:
-      "A LinkedIn-style networking platform for college students, implemented in COBOL by a team working with Docker, GitHub, Slack, and Jira. I implemented key user features, managed integration workflows, and improved code reusability across the team’s modules.",
-    ghLink: "https://github.com/kcibak/Arizona-f25CEN4020",
-  },
-  {
-    title: "Florida State Inflatable",
-    badge: "Business website",
-    tech: ["HTML", "CSS", "JavaScript"],
-    imgPath: fsi,
-    description:
-      "A website for an inflatables rental business where customers can browse, make reservations, and contact the store. I designed the UI and wrote the frontend in HTML, CSS, and JavaScript.",
-    ghLink: "https://github.com/sofyccn/Florida-State-Inflatable",
-    demoLink: "https://sofyccn.github.io/Florida-State-Inflatable/",
   },
 ];
 

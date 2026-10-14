@@ -26,7 +26,7 @@ function Home2() {
               <i>
                 <b className="purple">
                   {" "}
-                  TypeScript, JavaScript, Python, and SQL{" "}
+                  PHP, JavaScript, React, Python, and SQL{" "}
                 </b>
               </i>
               and I enjoy using <b className="purple">APIs and AI </b> to make
