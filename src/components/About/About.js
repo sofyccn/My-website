@@ -6,6 +6,7 @@ import Techstack from "./Techstack";
 import Experience from "./Experience";
 import Aboutcard from "./AboutCard";
 import coding from "../../Assets/coding.jpg";
+import Reveal from "../Reveal";
 
 function About() {
   return (
@@ -23,27 +24,31 @@ function About() {
                 paddingBottom: "50px",
               }}
             >
-              <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+              <Reveal as="h1" variant="spacing" style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
                 Know Who <strong className="purple">I AM</strong>
-              </h1>
-              <Aboutcard />
+              </Reveal>
+              <Reveal delay={150}>
+                <Aboutcard />
+              </Reveal>
             </Col>
             <Col
               md={5}
               style={{ paddingTop: "120px", paddingBottom: "50px" }}
               className="about-img"
             >
-              <img src={coding} alt="Sofia with teammates" className="img-fluid home-photo" />
+              <Reveal variant="zoom" delay={250}>
+                <img src={coding} alt="Sofia with teammates" className="img-fluid home-photo" />
+              </Reveal>
             </Col>
           </Row>
-          <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+          <Reveal as="h1" variant="drop" className="project-heading" style={{ paddingBottom: "20px" }}>
             Work <strong className="purple">Experience</strong>
-          </h1>
+          </Reveal>
           <Experience />
 
-          <h1 className="project-heading">
+          <Reveal as="h1" variant="drop" className="project-heading">
             Professional <strong className="purple">Skillset </strong>
-          </h1>
+          </Reveal>
 
           <Techstack />
 

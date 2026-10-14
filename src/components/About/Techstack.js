@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import Reveal from "../Reveal";
 import {
   SiPhp,
   SiExpress,
@@ -53,15 +54,23 @@ const stack = [
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      {stack.map(({ name, img, Icon }) => (
-        <Col xs={4} md={2} className="tech-icons" key={name}>
+      {stack.map(({ name, img, Icon }, i) => (
+        <Reveal
+          as={Col}
+          xs={4}
+          md={2}
+          variant="zoom"
+          delay={i * 40}
+          className="tech-icons"
+          key={name}
+        >
           {img ? (
             <img src={img} alt="" />
           ) : (
             <Icon className="tech-icon-images" aria-hidden="true" />
           )}
           <div className="tech-icons-text">{name}</div>
-        </Col>
+        </Reveal>
       ))}
     </Row>
   );

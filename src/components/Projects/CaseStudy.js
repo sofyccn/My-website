@@ -4,6 +4,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { BsArrowLeft, BsArrowRight, BsArrowDown } from "react-icons/bs";
 import Particle from "../Particle";
 import caseStudies from "./caseStudies";
+import Reveal from "../Reveal";
 
 function CaseStudy() {
   const { slug } = useParams();
@@ -22,7 +23,9 @@ function CaseStudy() {
             </Link>
 
             <p className="case-context">{study.context}</p>
-            <h1 className="case-title">{study.title}</h1>
+            <Reveal as="h1" variant="spacing" className="case-title">
+              {study.title}
+            </Reveal>
             <p className="project-badge">{study.badge}</p>
             <p className="case-summary">{study.summary}</p>
 
@@ -59,55 +62,55 @@ function CaseStudy() {
               />
             )}
 
-            <section className="case-section">
+            <Reveal as="section" className="case-section">
               <h2>The problem</h2>
               <p>{study.problem}</p>
-            </section>
+            </Reveal>
 
-            <section className="case-section">
+            <Reveal as="section" className="case-section">
               <h2>My role</h2>
               <p>{study.role}</p>
-            </section>
+            </Reveal>
 
-            <section className="case-section">
+            <Reveal as="section" className="case-section">
               <h2>{study.flowTitle}</h2>
               <ol className="case-flow">
                 {study.flow.map((step, i) => (
                   <React.Fragment key={step.label}>
-                    <li className="case-flow-step">
+                    <Reveal as="li" variant="zoom" delay={i * 140} className="case-flow-step spotlight">
                       <span className="case-flow-label">{step.label}</span>
                       {step.detail && (
                         <span className="case-flow-detail">{step.detail}</span>
                       )}
-                    </li>
+                    </Reveal>
                     {i < study.flow.length - 1 && (
-                      <li className="case-flow-arrow" aria-hidden="true">
+                      <Reveal as="li" variant="zoom" delay={i * 140 + 70} className="case-flow-arrow" aria-hidden="true">
                         <BsArrowRight className="arrow-wide" />
                         <BsArrowDown className="arrow-narrow" />
-                      </li>
+                      </Reveal>
                     )}
                   </React.Fragment>
                 ))}
               </ol>
-            </section>
+            </Reveal>
 
-            <section className="case-section">
+            <Reveal as="section" className="case-section">
               <h2>What I built</h2>
               <ul>
                 {study.built.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </section>
+            </Reveal>
 
-            <section className="case-section">
+            <Reveal as="section" className="case-section">
               <h2>Results</h2>
               <ul>
                 {study.results.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </section>
+            </Reveal>
           </Col>
         </Row>
       </Container>

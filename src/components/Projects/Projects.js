@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import ProjectCard from "./ProjectCards";
 import caseStudies from "./caseStudies";
+import Tilt from "react-parallax-tilt";
+import Reveal from "../Reveal";
 import Particle from "../Particle";
 import lpa from "../../Assets/Projects/lpa.jpg";
 import theraplay from "../../Assets/Projects/theraplay.jpg";
@@ -57,16 +59,24 @@ function Projects() {
     <Container fluid className="project-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
+        <Reveal as="h1" variant="drop" className="project-heading">
           Featured <strong className="purple">Work </strong>
-        </h1>
-        <p className="project-intro">
+        </Reveal>
+        <Reveal as="p" variant="spacing" className="project-intro">
           The problem, what I built, and how it turned out.
-        </p>
+        </Reveal>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {caseStudies.map((study) => (
-            <Col md={4} className="project-card" key={study.slug}>
-              <Link to={`/project/${study.slug}`} className="featured-card">
+          {caseStudies.map((study, i) => (
+            <Reveal as={Col} md={4} className="project-card" key={study.slug} delay={i * 120}>
+              <Tilt
+                tiltMaxAngleX={5}
+                tiltMaxAngleY={5}
+                glareEnable
+                glareMaxOpacity={0.12}
+                glareBorderRadius="16px"
+                className="tilt-fill"
+              >
+              <Link to={`/project/${study.slug}`} className="featured-card spotlight">
                 {study.img ? (
                   <img
                     src={study.img}
@@ -92,18 +102,19 @@ function Projects() {
                   </span>
                 </div>
               </Link>
-            </Col>
+              </Tilt>
+            </Reveal>
           ))}
         </Row>
 
-        <h1 className="project-heading">
+        <Reveal as="h1" variant="drop" className="project-heading">
           More <strong className="purple">Projects </strong>
-        </h1>
+        </Reveal>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {projects.map((project) => (
-            <Col md={6} lg={3} className="project-card" key={project.title}>
+          {projects.map((project, i) => (
+            <Reveal as={Col} md={6} lg={3} className="project-card" key={project.title} delay={i * 100}>
               <ProjectCard {...project} />
-            </Col>
+            </Reveal>
           ))}
         </Row>
       </Container>

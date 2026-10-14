@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import Reveal from "../Reveal";
 
 const experience = [
   {
@@ -80,7 +81,7 @@ function Experience() {
       <Row style={{ justifyContent: "center", paddingBottom: "30px" }}>
         <Col md={10}>
           {experience.map((job) => (
-            <div className="experience-item" key={job.company}>
+            <Reveal className="experience-item spotlight" key={job.company}>
               <div className="experience-header">
                 <h3 className="experience-company">{job.company}</h3>
                 <span className="experience-dates">{job.dates}</span>
@@ -95,24 +96,24 @@ function Experience() {
                   <li key={i}>{point}</li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </Col>
       </Row>
 
-      <h1 className="project-heading">
+      <Reveal as="h1" variant="drop" className="project-heading">
         <strong className="purple">Education</strong>
-      </h1>
+      </Reveal>
       <Row style={{ justifyContent: "center", padding: "20px 0 50px" }}>
         <Col md={10}>
           {education.map((item) => (
-            <div className="experience-item" key={item.school}>
+            <Reveal className="experience-item spotlight" key={item.school}>
               <div className="experience-header">
                 <h3 className="experience-company">{item.school}</h3>
                 <span className="experience-dates">{item.dates}</span>
               </div>
               <span className="purple">{item.degree}</span>
-            </div>
+            </Reveal>
           ))}
         </Col>
       </Row>

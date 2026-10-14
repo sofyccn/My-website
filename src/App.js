@@ -10,7 +10,7 @@ import {
   Routes,
   Navigate
 } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
+import Effects from "./components/Effects";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -24,7 +24,7 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Navbar />
-        <ScrollToTop />
+        <Effects />
         <Suspense fallback={<div className="page-loading" />}>
           <Routes>
             <Route path="/" element={<Home />} />

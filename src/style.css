@@ -1369,3 +1369,313 @@ body {
     display: inline;
   }
 }
+
+/* --------- */
+/* Motion */
+/* --------- */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Scroll-triggered entrances */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out) var(--reveal-delay, 0ms),
+    transform 0.9s var(--ease-out) var(--reveal-delay, 0ms),
+    letter-spacing 1.1s var(--ease-out) var(--reveal-delay, 0ms) !important;
+}
+
+.reveal-up {
+  transform: translateY(36px);
+}
+
+.reveal-drop {
+  transform: translateY(-48px);
+  transition: opacity 0.7s var(--ease-out) var(--reveal-delay, 0ms),
+    transform 1s var(--ease-bounce) var(--reveal-delay, 0ms) !important;
+}
+
+.reveal-zoom {
+  transform: scale(0.85);
+}
+
+.reveal-zoom.tech-icons {
+  transform: scale(0.6) !important;
+}
+
+.reveal-spacing {
+  letter-spacing: 0.35em;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+.reveal-spacing.is-visible {
+  letter-spacing: normal;
+}
+
+/* Hero entrance on page load */
+.letters {
+  display: inline-block;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em) rotate(6deg);
+  animation: letter-in 0.7s var(--ease-bounce) forwards;
+}
+
+.main-name .letter {
+  background: linear-gradient(90deg, #cd5ff8, #f0a6ff, #cd5ff8);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: letter-in 0.7s var(--ease-bounce) forwards,
+    shimmer 6s linear 1.5s infinite;
+}
+
+.heading-name .letter {
+  transition: translate 0.25s var(--ease-bounce);
+}
+
+.heading-name .letter:hover {
+  translate: 0 -8px;
+}
+
+@keyframes letter-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.hero-fade {
+  opacity: 0;
+  animation: hero-fade 0.9s var(--ease-out) forwards;
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-photo-in {
+  opacity: 0;
+  animation: photo-in 1.1s var(--ease-out) 0.4s forwards;
+}
+
+@keyframes photo-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.home-photo-tilt {
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.tilt-fill {
+  height: 100%;
+  border-radius: 16px;
+}
+
+/* Spotlight that follows the cursor across cards */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    320px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(199, 112, 240, 0.22),
+    transparent 65%
+  );
+  transition: opacity 0.3s ease;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Soft glow that trails the cursor across the page */
+.cursor-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle,
+    rgba(160, 80, 220, 0.16),
+    rgba(160, 80, 220, 0) 65%
+  );
+  transform: translate(
+    calc(var(--cursor-x, -1000px) - 260px),
+    calc(var(--cursor-y, -1000px) - 260px)
+  );
+  transition: opacity 0.4s ease;
+}
+
+.cursor-active .cursor-glow {
+  opacity: 1;
+}
+
+/* Reading progress along the top edge */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  height: 3px;
+  pointer-events: none;
+  transform-origin: 0 50%;
+  transform: scaleX(var(--scroll-progress, 0));
+  background: linear-gradient(90deg, #8250b8, #c770f0, #f0a6ff);
+}
+
+/* Magnetic buttons ease back into place */
+.magnetic {
+  transition: transform 0.25s var(--ease-out), background-color 0.25s ease,
+    color 0.25s ease, box-shadow 0.25s ease !important;
+  will-change: transform;
+}
+
+.home-cta .btn-primary:hover {
+  box-shadow: 0 10px 30px rgba(160, 80, 220, 0.45);
+}
+
+/* Screenshot zoom on hover */
+.project-card-view .card-img-top,
+.featured-card-img {
+  transition: transform 0.6s var(--ease-out) !important;
+}
+
+.project-card-view:hover .card-img-top,
+.featured-card:hover .featured-card-img {
+  transform: scale(1.05);
+}
+
+.featured-card-placeholder span {
+  transition: transform 0.4s var(--ease-out);
+}
+
+.featured-card:hover .featured-card-placeholder span {
+  transform: translateX(10px);
+}
+
+/* Tech tags lift on hover */
+.project-tech-tag {
+  transition: background-color 0.2s ease, transform 0.2s var(--ease-out);
+}
+
+.project-tech-tag:hover {
+  transform: translateY(-2px);
+  background-color: #a868e0;
+}
+
+.tech-icons:hover img,
+.tech-icons:hover .tech-icon-images {
+  transform: rotate(-8deg) scale(1.15);
+}
+
+.tech-icons img,
+.tech-icon-images {
+  transition: transform 0.3s var(--ease-bounce);
+}
+
+/* Experience cards slide slightly on hover */
+.experience-item {
+  transition: border-color 0.3s ease, transform 0.3s var(--ease-out);
+}
+
+.experience-item:hover {
+  border-color: rgba(200, 137, 230, 0.6);
+  transform: translateX(6px);
+}
+
+/* Highlights number pop */
+.highlights a:hover strong {
+  transform: scale(1.06);
+}
+
+.highlights strong {
+  display: inline-block;
+  transform-origin: left center;
+  transition: transform 0.3s var(--ease-bounce);
+}
+
+/* Social icons spin a little */
+.home-social-icons svg {
+  transition: transform 0.4s var(--ease-bounce);
+}
+
+.home-social-icons:hover svg {
+  transform: rotate(-12deg) scale(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .letter,
+  .hero-fade,
+  .hero-photo-in {
+    opacity: 1 !important;
+    transform: none !important;
+    letter-spacing: normal !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .main-name .letter {
+    animation: none !important;
+  }
+
+  .cursor-glow,
+  .scroll-progress {
+    display: none;
+  }
+}

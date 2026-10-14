@@ -5,6 +5,8 @@ import homeLogo from "../../Assets/sofia.jpg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import Tilt from "react-parallax-tilt";
+import Reveal from "../Reveal";
 import {
   AiFillGithub,
   AiFillInstagram,
@@ -26,7 +28,7 @@ const highlights = [
   {
     value: "Research Award",
     label: "USF Undergraduate Research",
-    href: "https://github.com/sofyccn/PIRLS_2021",
+    href: "https://mintlaboratory.notion.site/Sofia-awarded-undergraduate-research-award-1f816922771280bcb572c5e66ec98e88",
   },
   {
     value: "+30%",
@@ -34,6 +36,24 @@ const highlights = [
     to: "/about",
   },
 ];
+
+// Splits text into letters that rise in one after another on page load
+function AnimatedLetters({ text, startDelay = 0 }) {
+  return (
+    <span className="letters" aria-label={text}>
+      {Array.from(text).map((char, i) => (
+        <span
+          key={i}
+          className="letter"
+          aria-hidden="true"
+          style={{ animationDelay: `${startDelay + i * 45}ms` }}
+        >
+          {char === " " ? "\u00a0" : char}
+        </span>
+      ))}
+    </span>
+  );
+}
 
 function Home() {
   return (
@@ -43,7 +63,7 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
+              <h1 style={{ paddingBottom: 15 }} className="heading hero-fade">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-label="waving hand">
                   👋🏻
@@ -51,60 +71,73 @@ function Home() {
               </h1>
 
               <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> SOFIA COBO</strong>
+                <AnimatedLetters text="I'M " startDelay={150} />
+                <strong className="main-name">
+                  <AnimatedLetters text="SOFIA COBO" startDelay={330} />
+                </strong>
               </h1>
 
-              <div className="home-type">
+              <div className="home-type hero-fade" style={{ animationDelay: "800ms" }}>
                 <Type />
               </div>
 
-              <p className="home-tagline">
+              <p className="home-tagline hero-fade" style={{ animationDelay: "900ms" }}>
                 I build AI pipelines, integrations, and full stack web apps
                 that people rely on at work.
               </p>
 
-              <p className="home-open-to">
+              <p className="home-open-to hero-fade" style={{ animationDelay: "1000ms" }}>
                 <span className="status-dot" aria-hidden="true" />
                 Open to full-time roles, internships, freelance work, and
                 collaborations
               </p>
 
-              <div className="home-cta">
-                <Link to="/project" className="btn btn-primary">
+              <div className="home-cta hero-fade" style={{ animationDelay: "1100ms" }}>
+                <Link to="/project" className="btn btn-primary magnetic">
                   View my work
                 </Link>
-                <Link to="/resume" className="btn btn-outline-light">
+                <Link to="/resume" className="btn btn-outline-light magnetic">
                   Resume
                 </Link>
               </div>
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="Sofia Cobo"
-                className="img-fluid home-photo"
-                style={{ maxHeight: "450px" }}
-              />
+              <div className="hero-photo-in">
+                <Tilt
+                  tiltMaxAngleX={8}
+                  tiltMaxAngleY={8}
+                  glareEnable
+                  glareMaxOpacity={0.15}
+                  glareBorderRadius="20px"
+                  className="home-photo-tilt"
+                >
+                  <img
+                    src={homeLogo}
+                    alt="Sofia Cobo"
+                    className="img-fluid home-photo"
+                    style={{ maxHeight: "450px" }}
+                  />
+                </Tilt>
+              </div>
             </Col>
           </Row>
 
           <ul className="highlights">
-            {highlights.map((item) => (
-              <li key={item.label}>
+            {highlights.map((item, i) => (
+              <Reveal as="li" key={item.label} delay={i * 110}>
                 {item.href ? (
-                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="spotlight">
                     <strong>{item.value}</strong>
                     <span>{item.label}</span>
                   </a>
                 ) : (
-                  <Link to={item.to}>
+                  <Link to={item.to} className="spotlight">
                     <strong>{item.value}</strong>
                     <span>{item.label}</span>
                   </Link>
                 )}
-              </li>
+              </Reveal>
             ))}
           </ul>
         </Container>
@@ -114,7 +147,7 @@ function Home() {
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
+            <Reveal as="h1" variant="spacing">Find Me On</Reveal>
             <p>
               Feel free to <span className="purple">connect </span>with me
             </p>
@@ -124,7 +157,7 @@ function Home() {
                   href="https://github.com/sofyccn"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons magnetic"
                 >
                   <AiFillGithub />
                 </a>
@@ -134,7 +167,7 @@ function Home() {
                   href="https://www.linkedin.com/in/sofia-cobo/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons magnetic"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -144,7 +177,7 @@ function Home() {
                   href="https://www.instagram.com/sofy_ccn"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour home-social-icons magnetic"
                 >
                   <AiFillInstagram />
                 </a>
@@ -152,7 +185,7 @@ function Home() {
               <li className="social-icons">
                 <a
                   href="mailto:sofycobo14@gmail.com"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour home-social-icons magnetic"
                   aria-label="Email"
                 >
                   <AiOutlineMail />

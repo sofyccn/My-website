@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/sofia3.jpg";
 import Tilt from "react-parallax-tilt";
+import Reveal from "../Reveal";
 
 function Home2() {
   return (
@@ -9,10 +10,10 @@ function Home2() {
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
+            <Reveal as="h1" variant="spacing" style={{ fontSize: "2.6em" }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
-            </h1>
-            <p className="home-about-body">
+            </Reveal>
+            <Reveal as="p" className="home-about-body" delay={150}>
               I’m a <b className="purple">Software Engineer</b> at Our Town
               America and a Computer Science graduate from the University of
               South Florida. I build{" "}
@@ -47,12 +48,14 @@ function Home2() {
               </i>{" "}
               (I speak Spanish, English, and Portuguese). I’m very social and
               <b className="purple"> love making connections.</b>
-            </p>
+            </Reveal>
           </Col>
           <Col md={4} className="myAvtar">
-            <Tilt>
+            <Reveal variant="zoom" delay={200}>
+            <Tilt glareEnable glareMaxOpacity={0.15} glareBorderRadius="20px">
               <img src={myImg} className="img-fluid home-photo" alt="Sofia Cobo" />
             </Tilt>
+            </Reveal>
           </Col>
         </Row>
       </Container>
