@@ -1,38 +1,16 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
 import ProjectCard from "./ProjectCards";
+import caseStudies from "./caseStudies";
 import Particle from "../Particle";
-import bloom from "../../Assets/Projects/bloom.png";
-import lpa from "../../Assets/Projects/lpa.png";
-import theraplay from "../../Assets/Projects/theraplay.jpeg";
-import kyodo from "../../Assets/Projects/kyodo.png";
+import lpa from "../../Assets/Projects/lpa.jpg";
+import theraplay from "../../Assets/Projects/theraplay.jpg";
 import campusEvents from "../../Assets/Projects/campusEvents.jpg";
-import nosyNeighbor from "../../Assets/Projects/nosyNeighbor.png";
+import nosyNeighbor from "../../Assets/Projects/nosyNeighbor.jpg";
 
 const projects = [
-  {
-    title: "Kyodo Catalog",
-    badge: "Client project · 2026",
-    tech: ["React", "TypeScript", "PostgreSQL", "Clerk", "Cloudflare R2"],
-    imgPath: kyodo,
-    imgPosition: "left top",
-    description:
-      "A private B2B catalog and order-request app for an agricultural machinery and spare-parts business, covering 1,200 products. Approved clients browse the catalog and send order requests, dispatchers confirm stock, and every status change is enforced on the server and recorded in a history table. I built it end to end from the client’s concept: frontend, backend, branding, and UX/UI. It replaced a physical catalog and Excel spreadsheets.",
-    ghLink: "https://github.com/sofyccn/catalog",
-    demoLink: "https://catalog-api-ten.vercel.app",
-  },
-  {
-    title: "Bloom",
-    badge: "Published at ACM/IEEE HRI ’26",
-    tech: ["Python", "Raspberry Pi", "Computer Vision", "LLM"],
-    imgPath: bloom,
-    description:
-      "A low-cost, LLM-powered social robot built at USF’s RARE Lab. I built the wake-word, speech-to-text, and text-to-speech pipeline for its conversations, and integrated computer vision with Dynamixel motors for head-tracking on a Raspberry Pi. I’m a co-author of the paper, Bloom Preview: A Low-Cost LLM-Powered Social Robot.",
-    ghLink:
-      "https://github.com/TheRARELab/blossom-public/tree/ba62b2a5c6bc72c6a89a583e2d4abc9665427c34",
-    demoLink: "https://doi.org/10.1145/3776734.3794575",
-    demoLabel: "Paper",
-  },
   {
     title: "TheraPlay",
     badge: "1st Place, HealthHacks USF · Fall 2025",
@@ -80,14 +58,50 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          Featured <strong className="purple">Work </strong>
         </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+        <p className="project-intro">
+          The problem, what I built, and how it turned out.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {caseStudies.map((study) => (
+            <Col md={4} className="project-card" key={study.slug}>
+              <Link to={`/project/${study.slug}`} className="featured-card">
+                {study.img ? (
+                  <img
+                    src={study.img}
+                    alt=""
+                    className="featured-card-img"
+                    style={{ objectPosition: study.imgPosition }}
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="featured-card-img featured-card-placeholder">
+                    {study.flow.slice(1, 4).map((step) => (
+                      <span key={step.label}>{step.detail || step.label}</span>
+                    ))}
+                  </div>
+                )}
+                <div className="featured-card-body">
+                  <p className="case-context">{study.context}</p>
+                  <h2>{study.title}</h2>
+                  <p className="project-badge">{study.badge}</p>
+                  <p className="featured-card-summary">{study.summary}</p>
+                  <span className="featured-card-cta">
+                    Read the case study <BsArrowRight />
+                  </span>
+                </div>
+              </Link>
+            </Col>
+          ))}
+        </Row>
+
+        <h1 className="project-heading">
+          More <strong className="purple">Projects </strong>
+        </h1>
+        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {projects.map((project) => (
-            <Col md={4} className="project-card" key={project.title}>
+            <Col md={6} lg={3} className="project-card" key={project.title}>
               <ProjectCard {...project} />
             </Col>
           ))}

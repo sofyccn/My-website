@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/sofia.JPG";
+import homeLogo from "../../Assets/sofia.jpg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
@@ -11,6 +11,29 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+
+const highlights = [
+  {
+    value: "HRI ’26",
+    label: "Published paper",
+    href: "https://doi.org/10.1145/3776734.3794575",
+  },
+  {
+    value: "1st Place",
+    label: "HealthHacks USF",
+    href: "https://devpost.com/software/theraplay-za54kh",
+  },
+  {
+    value: "Research Award",
+    label: "USF Undergraduate Research",
+    href: "https://github.com/sofyccn/PIRLS_2021",
+  },
+  {
+    value: "+30%",
+    label: "Reported sales from an app I built",
+    to: "/about",
+  },
+];
 
 function Home() {
   return (
@@ -41,6 +64,12 @@ function Home() {
                 that people rely on at work.
               </p>
 
+              <p className="home-open-to">
+                <span className="status-dot" aria-hidden="true" />
+                Open to full-time roles, internships, freelance work, and
+                collaborations
+              </p>
+
               <div className="home-cta">
                 <Link to="/project" className="btn btn-primary">
                   View my work
@@ -60,6 +89,24 @@ function Home() {
               />
             </Col>
           </Row>
+
+          <ul className="highlights">
+            {highlights.map((item) => (
+              <li key={item.label}>
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                    <strong>{item.value}</strong>
+                    <span>{item.label}</span>
+                  </a>
+                ) : (
+                  <Link to={item.to}>
+                    <strong>{item.value}</strong>
+                    <span>{item.label}</span>
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
         </Container>
       </Container>
       <Home2 />

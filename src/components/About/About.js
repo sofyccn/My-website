@@ -5,7 +5,7 @@ import Github from "./Github";
 import Techstack from "./Techstack";
 import Experience from "./Experience";
 import Aboutcard from "./AboutCard";
-import coding from "../../Assets/coding.jpeg";
+import coding from "../../Assets/coding.jpg";
 
 function About() {
   return (
