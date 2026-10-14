@@ -13,6 +13,7 @@ function ProjectCards(props) {
           src={props.imgPath}
           alt={`${props.title} screenshot`}
           loading="lazy"
+          style={{ objectPosition: props.imgPosition }}
         />
       )}
       <Card.Body>
@@ -27,30 +28,30 @@ function ProjectCards(props) {
             ))}
           </div>
         )}
-        <Card.Text style={{ textAlign: "left" }}>{props.description}</Card.Text>
-        {props.ghLink && (
-          <Button
-            variant="primary"
-            href={props.ghLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <BsGithub /> &nbsp;GitHub
-          </Button>
-        )}
-
-        {props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {props.demoLabel || "Demo"}
-          </Button>
-        )}
+        <Card.Text>{props.description}</Card.Text>
+        <div className="project-links">
+          {props.ghLink && (
+            <Button
+              variant="primary"
+              href={props.ghLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BsGithub /> &nbsp;GitHub
+            </Button>
+          )}
+          {props.demoLink && (
+            <Button
+              variant="primary"
+              href={props.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <CgWebsite /> &nbsp;
+              {props.demoLabel || "Demo"}
+            </Button>
+          )}
+        </div>
       </Card.Body>
     </Card>
   );

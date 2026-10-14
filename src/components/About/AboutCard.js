@@ -7,7 +7,7 @@ function AboutCard() {
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "left" }}>
             Hi everyone! I’m <span className="purple">Sofia Cobo Navas</span>{" "}
             from <span className="purple">Tampa, Florida</span>.
             <br />

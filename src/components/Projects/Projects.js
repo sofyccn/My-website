@@ -8,7 +8,6 @@ import theraplay from "../../Assets/Projects/theraplay.jpeg";
 import kyodo from "../../Assets/Projects/kyodo.png";
 import campusEvents from "../../Assets/Projects/campusEvents.jpg";
 import nosyNeighbor from "../../Assets/Projects/nosyNeighbor.png";
-import bullspath from "../../Assets/Projects/bullspath.png";
 
 const projects = [
   {
@@ -16,31 +15,11 @@ const projects = [
     badge: "Client project · 2026",
     tech: ["React", "TypeScript", "PostgreSQL", "Clerk", "Cloudflare R2"],
     imgPath: kyodo,
+    imgPosition: "left top",
     description:
       "A private B2B catalog and order-request app for an agricultural machinery and spare-parts business, covering 1,200 products. Approved clients browse the catalog and send order requests, dispatchers confirm stock, and every status change is enforced on the server and recorded in a history table. I built it end to end from the client’s concept: frontend, backend, branding, and UX/UI. It replaced a physical catalog and Excel spreadsheets.",
     ghLink: "https://github.com/sofyccn/catalog",
     demoLink: "https://catalog-api-ten.vercel.app",
-  },
-  {
-    title: "Nosy Neighbor",
-    badge: "HackUSF 2026",
-    tech: ["React", "PHP", "Docker", "OpenAI API", "Google Street View"],
-    imgPath: nosyNeighbor,
-    description:
-      "AI-powered lead qualification for home service businesses like roofers, landscapers, and HVAC companies. A business uploads prospect addresses, the app pulls Google Street View imagery for each one, and OpenAI vision picks out the homes that visibly need that service. Each qualified lead gets a personalized postcard written from what was observed. I was the team’s UX/UI engineer.",
-    demoLink: "https://devpost.com/software/nosy-neighbor",
-    demoLabel: "Devpost",
-  },
-  {
-    title: "TheraPlay",
-    badge: "1st Place, HealthHacks USF · Fall 2025",
-    tech: ["React", "MediaPipe", "Flask", "Gemini API"],
-    imgPath: theraplay,
-    description:
-      "A real-time rehab platform that turns physical therapy into a game for both pediatric and adult patients. It tracks 25 body keypoints per frame with MediaPipe to score patient movement, then generates clinical progress reports through the Gemini API.",
-    ghLink: "https://github.com/seljbari/TheraPlay",
-    demoLink: "https://devpost.com/software/theraplay-za54kh",
-    demoLabel: "Devpost",
   },
   {
     title: "Bloom",
@@ -55,6 +34,27 @@ const projects = [
     demoLabel: "Paper",
   },
   {
+    title: "TheraPlay",
+    badge: "1st Place, HealthHacks USF · Fall 2025",
+    tech: ["React", "MediaPipe", "Flask", "Gemini API"],
+    imgPath: theraplay,
+    description:
+      "A real-time rehab platform that turns physical therapy into a game for both pediatric and adult patients. It tracks 25 body keypoints per frame with MediaPipe to score patient movement, then generates clinical progress reports through the Gemini API.",
+    ghLink: "https://github.com/seljbari/TheraPlay",
+    demoLink: "https://devpost.com/software/theraplay-za54kh",
+    demoLabel: "Devpost",
+  },
+  {
+    title: "Nosy Neighbor",
+    badge: "HackUSF 2026",
+    tech: ["React", "PHP", "Docker", "OpenAI API", "Google Street View"],
+    imgPath: nosyNeighbor,
+    description:
+      "AI-powered lead qualification for home service businesses like roofers, landscapers, and HVAC companies. A business uploads prospect addresses, the app pulls Google Street View imagery for each one, and OpenAI vision picks out the homes that visibly need that service. Each qualified lead gets a personalized postcard written from what was observed. I was the team’s UX/UI engineer.",
+    demoLink: "https://devpost.com/software/nosy-neighbor",
+    demoLabel: "Devpost",
+  },
+  {
     title: "CampusEvents",
     badge: "Spring 2026",
     tech: ["React", "TypeScript", "PostgreSQL", "Bun", "Hono", "Docker"],
@@ -62,17 +62,6 @@ const projects = [
     ghLink: "https://github.com/trevorflahardy/CampusEvents",
     description:
       "A campus event and ticket booking system for USF students and event organizers, built as a team project. It has JWT authentication, role-based access control, real-time ticket tracking, and a PostgreSQL schema behind a REST API with 15+ endpoints for event management, ticket purchasing, and analytics.",
-  },
-  {
-    title: "BullsPath",
-    badge: "HackJam 2025",
-    tech: ["Python", "Gemini API", "NetworkX", "Matplotlib", "Tailwind CSS"],
-    imgPath: bullspath,
-    description:
-      "An AI campus companion for new USF students, built in a 6-hour hackathon. You ask in plain language, like “where can I find a microwave near the library?”, and Gemini turns the request into a destination. A* pathfinding over a graph of campus locations finds the route, which is drawn on a map and read aloud as an audio guide.",
-    ghLink: "https://github.com/mmosoriov/navigating_USF",
-    demoLink: "https://devpost.com/software/bullspath",
-    demoLabel: "Devpost",
   },
   {
     title: "Student Well-Being Classification",

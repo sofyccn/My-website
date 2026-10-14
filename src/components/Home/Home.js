@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/sofia.JPG";
 import Particle from "../Particle";
@@ -31,8 +32,22 @@ function Home() {
                 <strong className="main-name"> SOFIA COBO</strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div className="home-type">
                 <Type />
+              </div>
+
+              <p className="home-tagline">
+                I build AI pipelines, integrations, and full stack web apps
+                that people rely on at work.
+              </p>
+
+              <div className="home-cta">
+                <Link to="/project" className="btn btn-primary">
+                  View my work
+                </Link>
+                <Link to="/resume" className="btn btn-outline-light">
+                  Resume
+                </Link>
               </div>
             </Col>
 
@@ -40,7 +55,7 @@ function Home() {
               <img
                 src={homeLogo}
                 alt="Sofia Cobo"
-                className="img-fluid"
+                className="img-fluid home-photo"
                 style={{ maxHeight: "450px" }}
               />
             </Col>

@@ -51,7 +51,7 @@ function Home2() {
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="Sofia Cobo" />
+              <img src={myImg} className="img-fluid home-photo" alt="Sofia Cobo" />
             </Tilt>
           </Col>
         </Row>

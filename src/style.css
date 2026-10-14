@@ -826,3 +826,267 @@ button:focus {
   border-radius: 12px;
   background-color: #934cce5e;
 }
+
+/* --------- */
+/* Design refresh */
+/* --------- */
+body {
+  font-family: "Outfit", system-ui, sans-serif !important;
+  line-height: 1.6;
+}
+
+.Typewriter__wrapper,
+.Typewriter__cursor,
+.project-tech-tag,
+.experience-dates,
+.tech-icons-text {
+  font-family: "PT Mono", monospace;
+}
+
+#tsparticles {
+  z-index: -1;
+  pointer-events: none;
+}
+
+.home-section {
+  z-index: auto;
+}
+
+.brand-name {
+  font-size: 1.35rem !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.navbar-nav .nav-item a::after {
+  height: 3px;
+}
+
+.home-content {
+  padding: 8rem 0 1rem !important;
+}
+
+.home-header {
+  padding-top: 40px !important;
+}
+
+.heading,
+.heading-name {
+  padding-left: 0 !important;
+}
+
+.heading {
+  font-size: 1.6em !important;
+  font-weight: 400;
+  color: #cfc3da;
+}
+
+.heading-name {
+  font-size: 3.4em !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.home-type {
+  min-height: 3.2em;
+  padding: 18px 0 0;
+  text-align: left;
+}
+
+.Typewriter__wrapper {
+  font-size: 1.5em !important;
+  font-weight: 500 !important;
+}
+
+.Typewriter__cursor {
+  font-size: 1.6em !important;
+}
+
+.home-tagline {
+  max-width: 30em;
+  font-size: 1.2em;
+  color: #e4dcec;
+}
+
+.home-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.home-cta .btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.home-photo {
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(200, 137, 230, 0.35),
+    0 18px 50px rgba(120, 50, 170, 0.35);
+}
+
+.home-about-section {
+  padding-top: 20px !important;
+  padding-bottom: 40px !important;
+}
+
+.home-about-description {
+  padding-top: 60px !important;
+  text-align: left;
+}
+
+.home-about-description h1 {
+  font-size: 2.2em !important;
+  font-weight: 600;
+}
+
+.home-about-body {
+  padding-top: 24px;
+  font-size: 1.15em !important;
+}
+
+.home-about-body i {
+  font-style: normal;
+}
+
+.myAvtar {
+  padding-top: 5em !important;
+}
+
+.project-heading {
+  font-weight: 600 !important;
+}
+
+.project-section {
+  padding-top: 120px !important;
+}
+
+.project-card {
+  padding: 16px !important;
+}
+
+.project-card-view {
+  background-color: rgba(34, 24, 54, 0.75) !important;
+  border: 1px solid rgba(200, 137, 230, 0.25) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.25s ease, border-color 0.25s ease !important;
+}
+
+.project-card-view:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(200, 137, 230, 0.7) !important;
+  box-shadow: 0 14px 40px rgba(120, 50, 170, 0.25) !important;
+}
+
+.project-card-view .card-img-top {
+  padding: 0 !important;
+  opacity: 1 !important;
+  border-radius: 0 !important;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-card-view .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.project-card-view .card-title {
+  font-size: 1.35em;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.project-card-view .card-text {
+  flex-grow: 1;
+  color: #e4dcec;
+  font-size: 0.98em;
+}
+
+.project-tech {
+  justify-content: flex-start;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-links .btn {
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+}
+
+.about-section {
+  padding-top: 120px !important;
+}
+
+.about-section .project-heading {
+  padding-top: 40px !important;
+}
+
+.experience-item {
+  background-color: rgba(34, 24, 54, 0.75);
+  outline: none;
+  border: 1px solid rgba(200, 137, 230, 0.25);
+  box-shadow: none;
+}
+
+.experience-item li {
+  color: #e4dcec;
+}
+
+.tech-icons {
+  margin: 8px !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  outline: 1px solid rgba(200, 137, 230, 0.35) !important;
+  box-shadow: none !important;
+  cursor: default !important;
+  font-size: 0.9rem !important;
+}
+
+.tech-icons img,
+.tech-icon-images {
+  height: 1.4rem;
+  width: 1.4rem;
+  object-fit: contain;
+}
+
+.btn-outline-light:hover {
+  color: #1b1429 !important;
+}
+
+@media (max-width: 767px) {
+  .heading-name {
+    font-size: 2.4em !important;
+  }
+
+  .home-content {
+    padding: 6rem 12px 1rem !important;
+  }
+
+  .Typewriter__wrapper {
+    position: static !important;
+    font-size: 1.2em !important;
+  }
+
+  .home-photo {
+    margin-top: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave {
+    animation: none;
+  }
+}

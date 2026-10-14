@@ -18,7 +18,13 @@ function Github() {
         username="sofyccn"
         blockSize={30}
         blockMargin={10}
-        color="#c084f5"
+        theme={{
+          level0: "#2a2140",
+          level1: "#5b3a86",
+          level2: "#8250b8",
+          level3: "#a868e0",
+          level4: "#c770f0",
+        }}
         fontSize={20}
       />
     </Row>

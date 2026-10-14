@@ -2,12 +2,8 @@ import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo.svg";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
 import {
-  AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
@@ -43,10 +39,10 @@ function NavBar() {
         <Navbar.Brand
           as={Link}
           to="/"
-          className="d-flex"
+          className="brand-name"
           onClick={() => updateExpanded(false)}
         >
-          <img src={logo} className="img-fluid logo" alt="Sofia Cobo" />
+          Sofia <span className="purple">Cobo</span>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -97,19 +93,6 @@ function NavBar() {
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/sofyccn/My-website"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View this site's source on GitHub"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
