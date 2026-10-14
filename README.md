@@ -1,53 +1,58 @@
-# 🌟 Sofia Cobo — Personal Portfolio
+# Sofia Cobo — Portfolio
 
-This is my personal developer portfolio website, built with React.js and inspired by Soumyajit4419’s Portfolio
+**Live site:** https://sofyccn.github.io/My-website/
 
-🔗 **Live site:** https://sofyccn.github.io/My-website/
+My personal portfolio. I'm a software engineer building AI pipelines, integrations, and full stack web apps, and a Computer Science graduate from the University of South Florida.
 
-It highlights my projects, experience, and interests in software development, data science, and human–robot interaction.
+![Preview of the site](public/og-image.jpg)
 
-## 🚀 Features
+## What's on the site
 
-⚡ Interactive UI: Built with React.js for smooth animations and responsive design.
+- **Home** — who I am, what I'm open to, and highlights: a paper published at ACM/IEEE HRI ’26, 1st place at HealthHacks USF, a USF Undergraduate Research Award, and a +30% lift in reported sales from an app I built.
+- **Projects** — case studies for my featured work (an AI sales call analysis pipeline, the Kyodo Catalog B2B app, and the Bloom social robot), each covering the problem, my role, how it works, and the results. Below them is a grid of other projects.
+- **About** — work experience, education, skills, and my GitHub contribution calendar.
+- **Resume** — an in-browser view of my resume with a download link.
 
-💼 Projects Section: Showcases my key projects, including robotics, data analysis, and web development.
+## Built with
 
-🎨 Custom Styling: Personalized color palette and layout adjustments for a modern, clean look.
+- React 17 with React Router, built with Create React App
+- React Bootstrap and custom CSS
+- react-pdf for the resume viewer, loaded only when the Resume page opens
+- Deployed to GitHub Pages by a GitHub Actions workflow
 
-🌐 Responsive Design: Works seamlessly across desktop and mobile devices.
+## Run it locally
 
-🧠 Technologies Used
-
-Frontend: React.js, Bootstrap, CSS
-
-Animations: React-particles, Typewriter effect
-
-Deployment: GitHub Pages (built and published by GitHub Actions on every push to `main`)
-
-## 🛠️ Setup Instructions
-
-1. Clone the repository:
+You need Node.js 18 or newer.
 
 ```bash
 git clone https://github.com/sofyccn/My-website.git
 cd My-website
-```
-
-2. Install dependencies:
-   
-```bash
 npm install
-```
-
-3. Run the development server:
-
-```bash
 npm start
 ```
 
-## ✨ Customization
+The site opens at http://localhost:3000/My-website.
 
-You can fork this repository and personalize it for your own portfolio.
-If you do, please give proper credit by linking back to the original repository:
+## Deployment
 
-Original template by [Soumyajit4419](https://github.com/soumyajit4419/Portfolio)
+Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). The workflow builds the app and publishes the `build` folder to GitHub Pages.
+
+It also copies `index.html` to `404.html`, so pages like `/about` still load when opened directly or refreshed. In the repo's **Settings → Pages**, the source must be set to **GitHub Actions**.
+
+## Where things live
+
+| To change | Edit |
+|---|---|
+| Featured case studies | `src/components/Projects/caseStudies.js` |
+| Other project cards | `src/components/Projects/Projects.js` |
+| Work experience and education | `src/components/About/Experience.js` |
+| Skills | `src/components/About/Techstack.js` |
+| Home intro and highlights | `src/components/Home/Home.js` and `Home2.js` |
+| Resume PDF | `src/Assets/sofia_resume.pdf` |
+| Link preview image | `public/og-image.jpg` |
+
+## Contact
+
+- Email: sofycobo14@gmail.com
+- LinkedIn: [linkedin.com/in/sofia-cobo](https://www.linkedin.com/in/sofia-cobo/)
+- GitHub: [@sofyccn](https://github.com/sofyccn)
