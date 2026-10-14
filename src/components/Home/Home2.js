@@ -13,38 +13,40 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m a <b className="purple">Senior Computer Science student</b> who loves working on new projects and learning new skills to keep my brain busy. 
-              I’ve explored everything from <b className="purple">robotics, AI to data analytics and web apps.</b> I’m always curious about how tech can solve real problems.
+              I’m a <b className="purple">Software Engineer</b> at Our Town
+              America and a Computer Science graduate from the University of
+              South Florida. I build{" "}
+              <b className="purple">
+                AI pipelines, integrations, and full stack web apps
+              </b>{" "}
+              that people rely on at work.
               <br />
               <br />
               I code mostly in
               <i>
                 <b className="purple">
                   {" "}
-                  Python, React, C, and JavaScript{" "}
+                  TypeScript, JavaScript, Python, and SQL{" "}
                 </b>
               </i>
-              and I enjoy using <b className="purple">APIs and AI </b> to make projects come alive.
+              and I enjoy using <b className="purple">APIs and AI </b> to make
+              projects come alive.
               <br />
               <br />
-              My key areas of interest include creating
-              <i>
-                <b className="purple">
-                  {" "}
-                  Web Apps, AI Projects, and Data Visualizations
-                </b>
-              </i>
-              .{" "}
-              I’m always excited to learn new technologies and adapt to whatever challenge comes next.
-
+              Lately that has meant an AI sales call analysis pipeline, CRM
+              integrations, and a B2B product catalog I built end to end.
+              Before that I did human–robot interaction research at USF’s RARE
+              Lab, where I co-authored a paper{" "}
+              <b className="purple">published at ACM/IEEE HRI ’26</b>.
               <br />
               <br />
-               When I’m not coding, you’ll probably find me 
+              When I’m not coding, you’ll probably find me
               <b className="purple"> traveling</b>, dancing, or{" "}
               <i>
-                <b className="purple">learning new languages</b>. I’m very social and
-                <b className="purple"> love making connections.</b>
-              </i>
+                <b className="purple">learning new languages</b>
+              </i>{" "}
+              (I speak Spanish, English, and Portuguese). I’m very social and
+              <b className="purple"> love making connections.</b>
             </p>
           </Col>
           <Col md={4} className="myAvtar">

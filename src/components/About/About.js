@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
+import Experience from "./Experience";
 import Aboutcard from "./AboutCard";
 import coding from "../../Assets/coding.jpeg";
 import Toolstack from "./Toolstack";
@@ -36,6 +37,11 @@ function About() {
               <img src={coding} alt="about" className="img-fluid" />
             </Col>
           </Row>
+          <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+            Work <strong className="purple">Experience</strong>
+          </h1>
+          <Experience />
+
           <h1 className="project-heading">
             Professional <strong className="purple">Skillset </strong>
           </h1>

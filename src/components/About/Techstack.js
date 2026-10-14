@@ -1,80 +1,68 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import C from "../../Assets/TechIcons/C++.svg";
+import {
+  SiPhp,
+  SiExpress,
+  SiPrisma,
+  SiFlask,
+  SiBun,
+  SiWordpress,
+  SiGithubactions,
+  SiPostgresql,
+  SiMysql,
+  SiOpenai,
+  SiFirebase,
+  SiNumpy,
+} from "react-icons/si";
+import Typescript from "../../Assets/TechIcons/Typescript.svg";
 import Javascript from "../../Assets/TechIcons/Javascript.svg";
-import Node from "../../Assets/TechIcons/Node.svg";
-import ReactIcon from "../../Assets/TechIcons/React.svg";
 import Python from "../../Assets/TechIcons/Python.svg";
-import Git from "../../Assets/TechIcons/Git.svg";
-import Docker from "../../Assets/TechIcons/Docker.svg";
 import SQL from "../../Assets/TechIcons/SQL.svg";
-import Tailwind from "../../Assets/TechIcons/Tailwind.svg";
-import OpenAPI from "../../Assets/TechIcons/OpenAPI.svg";
-import FastAPI from "../../Assets/TechIcons/FastAPI.svg";
-import Cii from "../../Assets/TechIcons/Cii.svg";
-import Ci from "../../Assets/TechIcons/C.svg";
 import R from "../../Assets/TechIcons/R.svg";
+import Ci from "../../Assets/TechIcons/C.svg";
+import ReactIcon from "../../Assets/TechIcons/React.svg";
+import Node from "../../Assets/TechIcons/Node.svg";
+import Docker from "../../Assets/TechIcons/Docker.svg";
+import Git from "../../Assets/TechIcons/Git.svg";
+
+const stack = [
+  { name: "TypeScript", img: Typescript },
+  { name: "JavaScript", img: Javascript },
+  { name: "Python", img: Python },
+  { name: "PHP", Icon: SiPhp },
+  { name: "SQL", img: SQL },
+  { name: "R", img: R },
+  { name: "C", img: Ci },
+  { name: "React", img: ReactIcon },
+  { name: "Node.js", img: Node },
+  { name: "Express", Icon: SiExpress },
+  { name: "Prisma", Icon: SiPrisma },
+  { name: "Flask", Icon: SiFlask },
+  { name: "Bun", Icon: SiBun },
+  { name: "PostgreSQL", Icon: SiPostgresql },
+  { name: "MySQL", Icon: SiMysql },
+  { name: "Docker", img: Docker },
+  { name: "Git", img: Git },
+  { name: "GitHub Actions", Icon: SiGithubactions },
+  { name: "OpenAI API", Icon: SiOpenai },
+  { name: "Firebase", Icon: SiFirebase },
+  { name: "NumPy", Icon: SiNumpy },
+  { name: "WordPress", Icon: SiWordpress },
+];
 
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Python} alt="Python" />
-        <div className="tech-icons-text">Python</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={C} alt="C++" />
-        <div className="tech-icons-text">C++</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Ci} alt="C" />
-        <div className="tech-icons-text">C</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Cii} alt="C#" />
-        <div className="tech-icons-text">C#</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={SQL} alt="SQL" />
-        <div className="tech-icons-text">Postgresql</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Javascript} alt="javascript" />
-        <div className="tech-icons-text">Javascript</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={R} alt="R" />
-        <div className="tech-icons-text">R</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Node} alt="node" />
-        <div className="tech-icons-text">Node.Js</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={ReactIcon} alt="react" />
-        <div className="tech-icons-text">React.Js</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Git} alt="git" />
-        <div className="tech-icons-text">Git</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Docker} alt="docker" />
-        <div className="tech-icons-text">Docker</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={Tailwind} alt="tailwind" />
-        <div className="tech-icons-text">Tailwind CSS</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={FastAPI} alt="FastAPI" />
-        <div className="tech-icons-text">FastAPI</div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <img src={OpenAPI} alt="OpenAPI" />
-        <div className="tech-icons-text">OpenAPI</div>
-      </Col>
-
+      {stack.map(({ name, img, Icon }) => (
+        <Col xs={4} md={2} className="tech-icons" key={name}>
+          {img ? (
+            <img src={img} alt="" />
+          ) : (
+            <Icon className="tech-icon-images" aria-hidden="true" />
+          )}
+          <div className="tech-icons-text">{name}</div>
+        </Col>
+      ))}
     </Row>
   );
 }

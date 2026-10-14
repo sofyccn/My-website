@@ -7,32 +7,39 @@ import { BsGithub } from "react-icons/bs";
 function ProjectCards(props) {
   return (
     <Card className="project-card-view">
-      <Card.Img
-        variant="top"
-        src={props.imgPath}
-        alt={`${props.title} screenshot`}
-        loading="lazy"
-      />
+      {props.imgPath && (
+        <Card.Img
+          variant="top"
+          src={props.imgPath}
+          alt={`${props.title} screenshot`}
+          loading="lazy"
+        />
+      )}
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        <Button
-          variant="primary"
-          href={props.ghLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
+        {props.badge && <p className="project-badge">{props.badge}</p>}
+        {props.tech && (
+          <div className="project-tech">
+            {props.tech.map((name) => (
+              <span className="project-tech-tag" key={name}>
+                {name}
+              </span>
+            ))}
+          </div>
+        )}
+        <Card.Text style={{ textAlign: "left" }}>{props.description}</Card.Text>
+        {props.ghLink && (
+          <Button
+            variant="primary"
+            href={props.ghLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsGithub /> &nbsp;GitHub
+          </Button>
+        )}
 
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
-
-        {!props.isBlog && props.demoLink && (
+        {props.demoLink && (
           <Button
             variant="primary"
             href={props.demoLink}
@@ -41,7 +48,7 @@ function ProjectCards(props) {
             style={{ marginLeft: "10px" }}
           >
             <CgWebsite /> &nbsp;
-            {"Demo"}
+            {props.demoLabel || "Demo"}
           </Button>
         )}
       </Card.Body>

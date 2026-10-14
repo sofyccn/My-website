@@ -12,9 +12,9 @@ function AboutCard() {
             from <span className="purple">Tampa, Florida</span>.
             <br />
             I’m currently working as a{" "}
-            <span className="purple">Research Assistant</span> at{" "}
-            <span className="purple">RARE lab</span>.
-            <br />I am pursuing a B.S. in{" "}
+            <span className="purple">Software Engineer</span> at{" "}
+            <span className="purple">Our Town America</span>.
+            <br />I graduated in May 2026 with a B.S. in{" "}
             <span className="purple">Computer Science</span> from{" "}
             <span className="purple">University of South Florida</span>.
             <br />

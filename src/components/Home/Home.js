@@ -7,6 +7,7 @@ import Type from "./Type";
 import {
   AiFillGithub,
   AiFillInstagram,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
@@ -84,6 +85,15 @@ function Home() {
                   className="icon-colour home-social-icons"
                 >
                   <AiFillInstagram />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="mailto:sofycobo14@gmail.com"
+                  className="icon-colour home-social-icons"
+                  aria-label="Email"
+                >
+                  <AiOutlineMail />
                 </a>
               </li>
             </ul>

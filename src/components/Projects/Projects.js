@@ -3,11 +3,79 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import InCollege from "../../Assets/Projects/inCollege.png";
-import taskmanager from "../../Assets/Projects/task.png";
 import fsi from "../../Assets/Projects/fsi.png";
 import bloom from "../../Assets/Projects/bloom.png";
 import lpa from "../../Assets/Projects/lpa.png";
 import theraplay from "../../Assets/Projects/theraplay.jpeg";
+
+const projects = [
+  {
+    title: "Kyodo Catalog",
+    badge: "Client project · 2026",
+    tech: ["React", "TypeScript", "PostgreSQL", "Clerk", "Cloudflare R2"],
+    description:
+      "A private B2B catalog and order-request app for an agricultural machinery and spare-parts business, covering 1,200 products. Approved clients browse the catalog and send order requests, dispatchers confirm stock, and every status change is enforced on the server and recorded in a history table. I built it end to end from the client’s concept: frontend, backend, branding, and UX/UI. It replaced a physical catalog and Excel spreadsheets.",
+    ghLink: "https://github.com/sofyccn/catalog",
+    demoLink: "https://catalog-api-ten.vercel.app",
+  },
+  {
+    title: "TheraPlay",
+    badge: "1st Place, HealthHacks USF · Fall 2025",
+    tech: ["React", "MediaPipe", "Flask", "Gemini API"],
+    imgPath: theraplay,
+    description:
+      "A real-time rehab platform that turns physical therapy into a game for both pediatric and adult patients. It tracks 25 body keypoints per frame with MediaPipe to score patient movement, then generates clinical progress reports through the Gemini API.",
+    ghLink: "https://github.com/seljbari/TheraPlay",
+    demoLink: "https://devpost.com/software/theraplay-za54kh",
+  },
+  {
+    title: "Bloom",
+    badge: "Published at ACM/IEEE HRI ’26",
+    tech: ["Python", "Raspberry Pi", "Computer Vision", "LLM"],
+    imgPath: bloom,
+    description:
+      "A low-cost, LLM-powered social robot built at USF’s RARE Lab. I built the wake-word, speech-to-text, and text-to-speech pipeline for its conversations, and integrated computer vision with Dynamixel motors for head-tracking on a Raspberry Pi. I’m a co-author of the paper, Bloom Preview: A Low-Cost LLM-Powered Social Robot.",
+    ghLink:
+      "https://github.com/TheRARELab/blossom-public/tree/ba62b2a5c6bc72c6a89a583e2d4abc9665427c34",
+    demoLink: "https://doi.org/10.1145/3776734.3794575",
+    demoLabel: "Paper",
+  },
+  {
+    title: "CampusEvents",
+    badge: "Spring 2026",
+    tech: ["React", "TypeScript", "PostgreSQL", "Bun", "Hono", "Docker"],
+    description:
+      "A full stack event booking system with JWT authentication, role-based access control, and real-time ticket tracking. I designed the PostgreSQL schema and a REST API with 15+ endpoints for event management, ticket purchasing, and analytics.",
+  },
+  {
+    title: "Student Well-Being Classification",
+    badge: "Undergraduate Research Award, USF · Spring 2025",
+    tech: ["R", "SPSS", "NumPy", "Matplotlib"],
+    imgPath: lpa,
+    description:
+      "Used data from the PIRLS 2021 international reading assessment to explore how students’ well-being relates to reading achievement. I applied Latent Profile Analysis to classify 4 well-being profiles from 500+ students, ran statistical testing (ANOVA, BIC, post-hoc Tukey), and built 15+ visualizations.",
+    ghLink: "https://github.com/sofyccn/PIRLS_2021",
+  },
+  {
+    title: "In College",
+    badge: "Fall 2025",
+    tech: ["COBOL", "Docker", "Jira"],
+    imgPath: InCollege,
+    description:
+      "A LinkedIn-style networking platform for college students, implemented in COBOL by a team working with Docker, GitHub, Slack, and Jira. I implemented key user features, managed integration workflows, and improved code reusability across the team’s modules.",
+    ghLink: "https://github.com/kcibak/Arizona-f25CEN4020",
+  },
+  {
+    title: "Florida State Inflatable",
+    badge: "Business website",
+    tech: ["HTML", "CSS", "JavaScript"],
+    imgPath: fsi,
+    description:
+      "A website for an inflatables rental business where customers can browse, make reservations, and contact the store. I designed the UI and wrote the frontend in HTML, CSS, and JavaScript.",
+    ghLink: "https://github.com/sofyccn/Florida-State-Inflatable",
+    demoLink: "https://sofyccn.github.io/Florida-State-Inflatable/",
+  },
+];
 
 function Projects() {
   return (
@@ -21,68 +89,11 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={theraplay}
-              isBlog={false}
-              title="Theraplay"
-              description="Computer vision powered web system for physical therapy combining real time movement analysis and gamified experiences for both pediatric and adult users. I contributed to the frontend and backend workflows: integrating the motion tracking using MediaPipe, constructing the gamified UI in React, and collaborating on API endpoints that processed the movement data and delivered interactive feedback. This project sharpened my skills in full-stack development, real time data processing, and designing intuitive user experiences."
-              ghLink="https://github.com/seljbari/TheraPlay"
-              demoLink="https://devpost.com/software/theraplay-za54kh"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={taskmanager}
-              isBlog={false}
-              title="Task Management App"
-              description="Developed a full-stack productivity app combining a React + TypeScript frontend, FastAPI backend, and PostgreSQL database. The system supports full CRUD operations for task management and introduces a natural language interface powered by OpenAI and LangChain, allowing users to create structured tasks from free-form text. This project strengthened my experience with AI integration, full-stack architecture, and building intuitive, data-driven user experiences"
-              ghLink="https://github.com/sofyccn/AI-task-manager"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bloom}
-              isBlog={false}
-              title="Bloom"
-              description="Work on a team to develop a social robot capable of recognizing and responding to human emotions using computer vision and speech interaction. I set up the Raspberry Pi environment, integrated face recognition modules, and optimized Python scripts for real time performance. The project explores how robots can engage empathetically with users through visual and conversational cues."
-              ghLink="https://github.com/TheRARELab/blossom-public/tree/ba62b2a5c6bc72c6a89a583e2d4abc9665427c34"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={InCollege}
-              isBlog={false}
-              title="In College"
-              description="A LinkedIn-style networking platform designed for college students to connect and build professional relationships. The system is implemented in COBOL, with deployment and collaboration managed through Docker, GitHub, Slack, and Jira. My main contributions include implementing key user features, managing integration workflows, and improving code reusability for the team’s modular development."
-              ghLink="https://github.com/kcibak/Arizona-f25CEN4020"             
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={lpa}
-              isBlog={false}
-              title="Wellbeing and Reading Achievement LPA"
-              description="I analyzed data from the PIRLS 2021 international reading assessment to explore how students’ well-being and school experiences relate to reading achievement. Using R, I performed Latent Profile Analysis (LPA) to identify classroom and student profiles based on factors such as belonging, bullying, and emotional well-being. I then used Python to visualize the results and compare the profiles’ reading outcomes."
-              ghLink="https://github.com/sofyccn/PIRLS_2021"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={fsi}
-              isBlog={false}
-              title="Florida State Inflatable"
-              description="Developed a website for an inflatables business. I built the frontend using HTML, JS and CSS and integrated data-APIs along with filtering and responsive charts to allow users make reservations and contact the store. My role included designing the UI, writing the data-fetch and transform logic in JavaScript, and optimizing performance."
-              ghLink="https://github.com/sofyccn/Florida-State-Inflatable"
-              demoLink="https://www.youtube.com/watch?v=SCcaArgSjvU"
-            />
-          </Col>
+          {projects.map((project) => (
+            <Col md={4} className="project-card" key={project.title}>
+              <ProjectCard {...project} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </Container>
